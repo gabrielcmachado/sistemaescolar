@@ -1,0 +1,22 @@
+<div class="container">
+    <a class="btn btn-outline-primary btn-sm" routerLink="/periodosnew">Novo Período</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Cod. Período</th>
+          <th scope="col">Período</th>
+          <th scope="col">Dt. Cadastro</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of periodos; index as i" >
+          <th>{{ item.idPeriodo }}</th>
+          <td>{{ item.nomePeriodo }}</td>
+          <td>{{ item.dtCadastro | date: 'dd/MM/yyyy' }}</td>
+          <td><a class="btn btn-outline-primary btn-sm">editar</a></td>
+          
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    

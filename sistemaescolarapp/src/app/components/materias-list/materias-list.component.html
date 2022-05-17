@@ -1,0 +1,25 @@
+<div class="container">
+    <a class="btn btn-outline-primary btn-sm" routerLink="/materiasnew">Nova Materia</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Cod. Matérias</th>
+          <th scope="col">Matéria</th>
+          <th scope="col">Peso Prova 1</th>
+          <th scope="col">Peso Prova 2</th>
+          <th scope="col">Peso Prova 3</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of materias; index as i" >
+          <th>{{ item.idMateria }}</th>
+          <td>{{ item.nomeMateria }}</td>
+          <td>{{ item.pesoProva1 }}</td>
+          <td>{{ item.pesoProva2 }}</td>
+          <td>{{ item.pesoProva3 }}</td>
+          <td><a class="btn btn-outline-primary btn-sm">editar</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    

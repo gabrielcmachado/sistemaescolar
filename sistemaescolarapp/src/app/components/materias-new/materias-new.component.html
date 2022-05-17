@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-6">Matérias</h1>
+        <p class="lead-1">Cadastro de Matérias</p>
+        <hr class="my-2">
+        
+        <div class="col-12">
+            <label for="iNome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="iNome" placeholder="Digite o nome da Matéria" [(ngModel)]="nomeMateria">
+          </div>
+          <div class="col-md-4">
+              <label for="iPesoProva1" class="form-label">Peso Prova 1</label>
+              <input currencyMask [options]="{prefix:'', decimal: '.', precision:'2' }" type="text" class="form-control" id="iPesoProva1" [(ngModel)]="pesoProva1">
+          </div>
+          <div class="col-md-4">
+            <label for="iPesoProva2" class="form-label">Peso Prova 2</label>
+            <input currencyMask [options]="{prefix:'', decimal: '.', precision:'2' }" type="text" class="form-control" id="iPesoProva2" [(ngModel)]="pesoProva2">
+        </div>
+        <div class="col-md-4">
+          <label for="iPesoProva3" class="form-label">Peso Prova 3</label>
+          <input [(ngModel)]="pesoProva3" currencyMask [options]="{ prefix:'', decimal: '.', precision:'2' }" type="text" class="form-control" id="iPesoProva3"  >
+      </div>
+            <div class="d-grid gap-2 d-md-flex">
+                <button class="btn btn-outline-primary me-md-2 btn-sm" type="button" (click)="save()" type="button">Confirmar</button>
+                <a routerLink="/materias" class="btn btn-outline-secondary">Cancelar</a>
+              </div>
+      </div>
+
+
+</div>

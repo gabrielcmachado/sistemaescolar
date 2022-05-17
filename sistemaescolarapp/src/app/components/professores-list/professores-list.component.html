@@ -1,0 +1,24 @@
+<div class="container">
+    <a class="btn btn-outline-primary btn-sm" routerLink="/professoresnew">Novo Professor</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Cod. Professor</th>
+          <th scope="col">Nome Professor</th>
+          <th scope="col">Dt. Cadastro</th>
+          <th scope="col">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr [ngStyle]="{'color':item.stAtivo == true ? 'green' : 'red'}" *ngFor="let item of professores; index as i" >
+          <th>{{ item.idProfessor }}</th>
+          <td>{{ item.nomeProfessor }}</td>
+          <td>{{ item.dtCadastro | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ item.stAtivo }}</td>
+          <td><a class="btn btn-outline-primary btn-sm">editar</a></td>
+          
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    

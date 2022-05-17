@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-6">Períodos</h1>
+        <p class="lead-1">Cadastro de um novo Período</p>
+        <hr class="my-2">
+        
+        <div class="col-6">
+            <label for="iPeriodo" class="form-label">Periodo</label>
+            <input type="text" class="form-control" id="iNome" placeholder="Digite o Período" [(ngModel)]="nomePeriodo">
+        </div>
+            <div class="col-md-4">
+              <label for="iData" class="form-label">Data de Cadastro</label>
+              <input type="date" class="form-control" id="iData" [(ngModel)]="dtCadastro">
+        </div>
+            <div class="d-grid gap-2 d-md-flex">
+                <button class="btn btn-outline-primary me-md-2 btn-sm" type="button" (click)="save()" type="button">Confirmar</button>
+                <a routerLink="/periodos" class="btn btn-outline-secondary">Cancelar</a>
+              </div>
+      </div>
+
+
+</div>
