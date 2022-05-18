@@ -11,5 +11,6 @@ namespace sistemaEscolar.Models
         public int idPeriodo { get; set; }
         public int idProfessor { get; set; }
         public int idTurma { get; set; }
+        public int idMateria { get; set; }
     }
 }
