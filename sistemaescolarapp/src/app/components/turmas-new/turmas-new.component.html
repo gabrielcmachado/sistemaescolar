@@ -1,32 +1,82 @@
 <div class="container">
-    <div class="jumbotron">
-        <h1 class="display-6">Turmas</h1>
-        <p class="lead-1">Cadastro de uma nova Turma</p>
-        <hr class="my-2">
-        
-        <div class="col-12">
-            <label for="iNome" class="form-label">Turma</label>
-            <input type="text" class="form-control" id="iNome" placeholder="Digite o nome da turma" [(ngModel)]="nmTurma">
-        </div>
-            <div class="col-md-4">
-              <label for="iData" class="form-label">Data de Cadastro</label>
-              <input type="date" class="form-control" id="iData" [(ngModel)]="dtCadastro">
-        </div>
-      </div>
-      <div class="col-md-4">
-        <label for="iQtAlunos" class="form-label">Qunatidade de Alunos</label>
-        <input type="number" class="form-control" id="iQtAlunos" [(ngModel)]="qtAlunos">
-      </div>
+  <div class="jumbotron">
+    <h1 class="display-6">Turmas</h1>
+    <p class="lead-1">Cadastro de uma nova Turma</p>
+    <hr class="my-2" />
 
-            <div class="col-md-2" style="margin-bottom:15px;">
-                <label for="iSituacao" class="form-label">Situação</label>
-                <select id="iSituacao" [(ngModel)]="stAtivo" class="form-select">
-                    <option [ngValue] = true selected>Ativo</option>
-                    <option [ngValue] = false >Inativo</option>
-                  </select>
-            </div>
-            <div class="d-grid gap-2 d-md-flex">
-                <button class="btn btn-outline-primary me-md-2 btn-sm" type="button" (click)="save()" type="button">Confirmar</button>
-                <a routerLink="/turmas" class="btn btn-outline-secondary">Cancelar</a>
-              </div>
+    <div class="col-12">
+      <label for="iNome" class="form-label">Turma</label>
+      <input
+        type="text"
+        class="form-control"
+        id="iNome"
+        placeholder="Digite o nome da turma"
+        [(ngModel)]="nmTurma"
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="iData" class="form-label">Data de Cadastro</label>
+      <input
+        type="date"
+        class="form-control"
+        id="iData"
+        [(ngModel)]="dtCadastro"
+      />
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="iQtAlunos" class="form-label">Qunatidade de Alunos</label>
+    <input
+      type="number"
+      class="form-control"
+      id="iQtAlunos"
+      [(ngModel)]="qtAlunos"
+    />
+  </div>
+
+  <div class="col-md-2" style="margin-bottom: 15px">
+    <label for="iSituacao" class="form-label">Situação</label>
+    <select id="iSituacao" [(ngModel)]="stAtivo" class="form-select">
+      <option [ngValue]=true selected>Ativo</option>
+      <option [ngValue]=false>Inativo</option>
+    </select>
+  </div>
+  <div class="d-grid gap-2 d-md-flex">
+    <button
+      class="btn btn-outline-primary me-md-2 btn-sm"
+      type="button"
+      (click)="save()"
+      type="button"
+    >
+      Confirmar
+    </button>
+    <a routerLink="/turmas" class="btn btn-outline-secondary">Cancelar</a>
+  </div>
+  <div class="col-md-12 .d-flex d-inline-flex align-items-baseline" style="margin-top: 20px;">
+    <div class="input-group mb-3" >
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Gerar Turmas Automaticamente</span>
+      </div>
+      <input
+        type="Number"
+        class="form-control"
+        placeholder="Quantidade"
+        id="qtTurmas"
+        [(ngModel)] = "qtTurmas"
+      />
+    </div>
+    <div class="input-group mb-3" >
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"> Alunos por Turma</span>
+      </div>
+      <input
+        type="Number"
+        class="form-control"
+        placeholder="Quantidade"
+        id="qtAlunosSelect"
+        [(ngModel)] = "qtAlunosSelect"
+      />
+    </div>
+    <a style="margin-left: 20px; padding: 7px 30px;" class="btn btn-success btn-sm" (click)="getTurmasAuto()">Gerar</a>
+  </div>
 </div>

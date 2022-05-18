@@ -1,5 +1,5 @@
 <div class="container">
-    <a class="btn btn-outline-primary btn-sm" routerLink="/materiasnew">Nova Materia</a>
+    <a class="btn btn-success btn-sm" routerLink="/materias/novo">Nova Materia</a>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -17,7 +17,7 @@
           <td>{{ item.pesoProva1 }}</td>
           <td>{{ item.pesoProva2 }}</td>
           <td>{{ item.pesoProva3 }}</td>
-          <td><a class="btn btn-outline-primary btn-sm">editar</a></td>
+          <td><a class="btn btn-warning btn-sm" (click)="onEdit(item.idMateria)">editar</a>  -  <a class="btn btn-danger btn-sm" (click)="onDelete(item.idMateria);" href="/materias">excluir</a></td>
         </tr>
         </tbody>
       </table>

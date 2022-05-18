@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MateriasService } from 'src/app/services/materias.service'
+import { MateriasService } from 'src/app/services/materias.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-materias-list',
@@ -8,7 +9,9 @@ import { MateriasService } from 'src/app/services/materias.service'
 })
 export class MateriasListComponent implements OnInit {
   materias:any;
-  constructor(private MateriasService: MateriasService) { }
+  constructor(private MateriasService: MateriasService,
+    private routes: Router,
+    private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
     this.listMaterias();
@@ -25,6 +28,19 @@ export class MateriasListComponent implements OnInit {
         console.log(error);
       });
   } 
-
+  onEdit(id:any) {
+    this.routes.navigate(['materias/edit', id]);
+  }
+  
+  onDelete(id:any) {
+      this.MateriasService.onDelete(id).subscribe(
+        (response: any) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
 
 }

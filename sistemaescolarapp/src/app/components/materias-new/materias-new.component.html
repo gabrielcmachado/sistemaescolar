@@ -25,6 +25,60 @@
                 <a routerLink="/materias" class="btn btn-outline-secondary">Cancelar</a>
               </div>
       </div>
-
+      <div class="col-md-12 .d-flex d-inline-flex align-items-baseline" style="margin-top: 20px;">
+        <div class="input-group mb-3" >
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Gerar Matérias Auto</span>
+          </div>
+          <input
+            type="Number"
+            class="form-control"
+            placeholder="Quantidade"
+            id="qtMaterias"
+            [(ngModel)] = "qtMaterias"
+          />
+        </div>
+        <div class="input-group mb-3" >
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"> Peso Prova 1</span>
+          </div>
+          <input
+            currencyMask [options]="{prefix:'', decimal: '.', precision:'2' }"
+            type="text"
+            class="form-control"
+            placeholder="Quantidade"
+            id="pesoProvaf1"
+            [(ngModel)] = "pesoProvaf1"
+            
+          />
+        </div>
+        <div class="input-group mb-3" >
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"> P.P2</span>
+          </div>
+          <input
+          currencyMask [options]="{prefix:'', decimal: '.', precision:'2' }"
+            type="text"
+            class="form-control"
+            placeholder="Quantidade"
+            id="pesoProvaf2"
+            [(ngModel)] = "pesoProvaf2"
+          />
+        </div>
+        <div class="input-group mb-3" >
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"> P.P3</span>
+          </div>
+          <input
+          currencyMask [options]="{prefix:'', decimal: '.', precision:'2' }"
+            type="text"
+            class="form-control"
+            placeholder="Quantidade"
+            id="pesoProvaf3"
+            [(ngModel)] = "pesoProvaf3"
+          />
+        </div>
+        <a style="margin-left: 20px; padding: 7px 30px;" class="btn btn-success btn-sm" (click)="getMateriasAuto()">Gerar</a>
+      </div>
 
 </div>

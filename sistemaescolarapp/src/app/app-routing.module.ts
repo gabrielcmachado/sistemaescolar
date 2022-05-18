@@ -10,19 +10,25 @@ import { MateriasNewComponent } from './components/materias-new/materias-new.com
 import { PeriodosNewComponent } from './components/periodos-new/periodos-new.component';
 import { ProfessoresNewComponent } from './components/professores-new/professores-new.component';
 import { TurmasNewComponent } from './components/turmas-new/turmas-new.component';
+import { VincularalunosturmaComponent } from './components/vincularalunosturma/vincularalunosturma.component';
 
 const routes: Routes = [
-  { path: 'alunosnew', component: AlunosNewComponent },
-  { path: 'edit/:id', component: AlunosNewComponent },
+  { path: 'alunos/novo', component: AlunosNewComponent },
+  { path: 'alunos/edit/:id', component: AlunosNewComponent },
   { path: 'alunos', component: AlunosListComponent },
   { path: 'materias', component: MateriasListComponent },
   { path: 'periodos', component: PeriodosListComponent },
   { path: 'professores', component: ProfessoresListComponent },
   { path: 'turmas', component: TurmasListComponent },
-  { path: 'materiasnew', component: MateriasNewComponent },
-  { path: 'periodosnew', component: PeriodosNewComponent },
-  { path: 'professoresnew', component: ProfessoresNewComponent },
-  { path: 'turmasnew', component: TurmasNewComponent },
+  { path: 'materias/novo', component: MateriasNewComponent },
+  { path: 'materias/edit/:id', component: MateriasNewComponent },
+  { path: 'periodos/novo', component: PeriodosNewComponent },
+  { path: 'periodos/edit/:id', component: PeriodosNewComponent },
+  { path: 'professores/novo', component: ProfessoresNewComponent },
+  { path: 'professores/edit/:id', component: ProfessoresNewComponent },
+  { path: 'turmas/novo', component: TurmasNewComponent },
+  { path: 'turmas/edit/:id', component: TurmasNewComponent },
+  { path: 'vincularturmasauto', component: VincularalunosturmaComponent},
   { path: '', redirectTo: 'alunos', pathMatch: 'full'},
 ];
 

@@ -1,23 +1,36 @@
 <div class="container">
-<a class="btn btn-outline-primary btn-sm" routerLink="/alunosnew">Novo Aluno</a>
-<table class="table table-striped">
+  <a class="btn btn-success btn-sm" routerLink="/alunos/novo">Novo Aluno</a>
+  <table class="table table-striped">
     <thead>
-    <tr>
-      <th scope="col">Cod. Aluno</th>
-      <th scope="col">Nome Aluno</th>
-      <th scope="col">Dt. Cadastro</th>
-      <th scope="col">Status</th>
-    </tr>
+      <tr>
+        <th scope="col">Cod. Aluno</th>
+        <th scope="col">Nome Aluno</th>
+        <th scope="col">Dt. Cadastro</th>
+        <th scope="col">Status</th>
+      </tr>
     </thead>
     <tbody>
-    <tr [ngStyle]="{'color':item.stAtivo == true ? 'green' : 'red'}" *ngFor="let item of alunos; index as i" >
-      <th>{{ item.idAluno }}</th>
-      <td>{{ item.nomeAluno }}</td>
-      <td>{{ item.dtCadastro | date: 'dd/MM/yyyy' }}</td>
-      <td>{{ item.stAtivo }}</td>
-      <td><a class="btn btn-outline-primary btn-sm" (click)="onEdit(item.idAluno)">editar</a></td>
-      
-    </tr>
+      <tr
+        [ngStyle]="{ color: item.stAtivo == true ? 'green' : 'red' }"
+        *ngFor="let item of alunos; index as i"
+      >
+        <th>{{ item.idAluno }}</th>
+        <td>{{ item.nomeAluno }}</td>
+        <td>{{ item.dtCadastro | date: "dd/MM/yyyy" }}</td>
+        <td>{{ item.stAtivo }}</td>
+        <td>
+          <a class="btn btn-warning btn-sm" (click)="onEdit(item.idAluno)"
+            >editar</a
+          >
+          -
+          <a
+            class="btn btn-danger btn-sm"
+            (click)="onDelete(item.idAluno)"
+            href="/"
+            >excluir</a
+          >
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>

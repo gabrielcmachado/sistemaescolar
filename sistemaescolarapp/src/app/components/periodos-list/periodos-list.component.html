@@ -1,5 +1,5 @@
 <div class="container">
-    <a class="btn btn-outline-primary btn-sm" routerLink="/periodosnew">Novo Período</a>
+    <a class="btn btn-success btn-sm" routerLink="/periodos/novo">Novo Período</a>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -13,7 +13,7 @@
           <th>{{ item.idPeriodo }}</th>
           <td>{{ item.nomePeriodo }}</td>
           <td>{{ item.dtCadastro | date: 'dd/MM/yyyy' }}</td>
-          <td><a class="btn btn-outline-primary btn-sm">editar</a></td>
+          <td><a class="btn btn-warning btn-sm" (click)="onEdit(item.idPeriodo)">editar</a>  -  <a class="btn btn-danger btn-sm" (click)="onDelete(item.idPeriodo);" href="/periodos">excluir</a></td>
           
         </tr>
         </tbody>

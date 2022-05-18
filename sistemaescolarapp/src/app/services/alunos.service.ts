@@ -5,25 +5,28 @@ import { Observable, take } from 'rxjs';
 const baseUrl = 'https://localhost:7106/api';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AlunosService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-  
   list(): Observable<any> {
     return this.http.get(`${baseUrl}/alunos`);
   }
 
-  create(alunos:any): Observable<any> {
-    return this.http.post(`${baseUrl}/alunos`,alunos);
-   }
+  create(alunos: any): Observable<any> {
+    return this.http.post(`${baseUrl}/alunos`, alunos);
+  }
 
-   loadById(id:any){
+  loadById(id: any) {
     return this.http.get(`${baseUrl}/alunos/${id}`).pipe(take(1));
-   }
+  }
 
-   update(alunos:any){
-    return this.http.put(`${baseUrl}/alunos/${alunos.id}`, alunos).pipe(take(1));
-   }
+  update(id: any, alunos: any) {
+    return this.http.put(`${baseUrl}/alunos/${id}`, alunos);
+  }
+
+  onDelete(id: any) {
+    return this.http.delete(`${baseUrl}/alunos/${id}`);
+  }
 }

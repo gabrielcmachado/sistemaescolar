@@ -25,6 +25,20 @@
                 <a routerLink="/professores" class="btn btn-outline-secondary">Cancelar</a>
               </div>
       </div>
-
+      <div class="col-md-7 .d-flex d-inline-flex align-items-baseline" style="margin-top: 20px;">
+        <div class="input-group mb-3" >
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Gerar Professores Automaticamente</span>
+          </div>
+          <input
+            type="Number"
+            class="form-control"
+            placeholder="Quantidade"
+            id="qtProfessores"
+            [(ngModel)] = "qtProfessores"
+          />
+        </div>
+        <a style="margin-left: 20px; padding: 7px 30px;" class="btn btn-success btn-sm" (click)="getProfessoresAuto()">Gerar</a>
+      </div>
 
 </div>
